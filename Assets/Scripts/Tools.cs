@@ -6,7 +6,7 @@ using UnityEngine;
 public class Tools : MonoBehaviour
 {
     public GameObject[] tools; 
-
+    public UIManager ui;
     public int currentTool = 0;
 
     private int nrTools;
@@ -17,6 +17,7 @@ public class Tools : MonoBehaviour
         nrTools = tools.Length;
 
         SwitchTool(currentTool);
+       
 
     }
 
@@ -29,6 +30,8 @@ public class Tools : MonoBehaviour
                 currentTool = i - 1;
 
                 SwitchTool(currentTool);
+                GameManager.currentTool = tools[currentTool].name;
+                ui.UpdateTool(tools[currentTool]);
 
             }
         }
