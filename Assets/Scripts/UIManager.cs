@@ -14,12 +14,14 @@ public class UIManager : MonoBehaviour
     public void UpdateHarvestAmount(int _Amount)
     {
         harvestAmountText.text = "Amount:" + _Amount;
+        //changes harvest amount display in UI
     }
 
     public void UpdateTimer(float _timer)
     {
         timerText.text = "Time Remaining:" + _timer.ToString("F2");
         dayNightCycleSlider.value = _timer;
+        //Changes timer when the sun rotation moves 
         
     }
 
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
     {
         
         currentToolText.text = _currentTool.ToString();
+        
 
     }
 
@@ -37,7 +40,7 @@ public class UIManager : MonoBehaviour
     {
 
         currentToolText.text = tool.name.ToString();
-
+        //shows current tool is UI display when a tool is changed 
     }
 
 

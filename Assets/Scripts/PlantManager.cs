@@ -8,6 +8,7 @@ public class PlantManager : MonoBehaviour
 {
     bool isPlanted = false;
     public UIManager ui;
+    public GameManager _GM;
     public int harvestAmount;
     public GameObject[] plantStages;
     int plantStage = 0;
@@ -16,7 +17,7 @@ public class PlantManager : MonoBehaviour
     public bool isWatered = false;
     public GameObject plant;
     public bool harvestable = false;
-    public int amount;
+    
     
 
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class PlantManager : MonoBehaviour
         isPlanted = false;
         plantStage = 0;
         plant = plantStages[plantStage];
-        
+       
     }
 
     // Update is called once per frame
@@ -44,6 +45,7 @@ public class PlantManager : MonoBehaviour
                 timer = timeBtwStages;
                 plantStage++;
                 UpdatePlant();
+                //when plant is watered it starts growing
             }
         }
     }
@@ -61,7 +63,7 @@ public class PlantManager : MonoBehaviour
         if(plantStage == plantStages.Length - 1)
         {
             harvestable = true;
-
+           //when plant fully grown it is ready for harvest
         }
     }
 
@@ -69,7 +71,7 @@ public class PlantManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(GameManager.currentTool == "Seeds")
+        if(GameManager.currentTool == "Seeds") 
         {
             if(isPlanted == false)
             {
@@ -77,6 +79,7 @@ public class PlantManager : MonoBehaviour
                 plantStage = 0;
                 UpdatePlant();
                 print("PLANTED SEED");
+                //plants seed when seeds tool is selected on soil piece
             }
         }
 
@@ -85,6 +88,7 @@ public class PlantManager : MonoBehaviour
             if (isPlanted == true)
             {
                 isWatered = true;
+                //waters seed after seed has been planted
             }
         }
 
@@ -95,11 +99,15 @@ public class PlantManager : MonoBehaviour
                 isPlanted = false;
                 plantStages[plantStage].SetActive(false);
                 plantStage = 0;
-                
+                _GM.harvestAmount++;
+                ui.UpdateHarvestAmount(_GM.harvestAmount);
+                //collects plant once it is fully grown
             }
+            
         }
 
     }
+
 
     
 }

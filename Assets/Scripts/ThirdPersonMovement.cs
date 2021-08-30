@@ -17,7 +17,7 @@ public class ThirdPersonMovement : MonoBehaviour
   
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0)) //allows interaction
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -27,7 +27,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 Debug.Log(hit.transform.name);
                 if (hit.transform.name == "Soil")
                 {
-                   
+                   //allows player to raycast to see if there is soil 
                 }
             }
             
@@ -46,6 +46,7 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
             controller.Move(direction * speed * Time.deltaTime);
+            //moves player in third person using cinemachine to implement in the game 
         }
 
        

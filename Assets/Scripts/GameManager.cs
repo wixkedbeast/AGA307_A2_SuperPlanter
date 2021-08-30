@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static string currentTool = "none";
-    public int harvestAmount;
-    public float timer = 0;
+    public int harvestAmount; //harvest amount 
+    public float timer = 0; //timer
     
     // Start is called before the first frame update
     void Start()

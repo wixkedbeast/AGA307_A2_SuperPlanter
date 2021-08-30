@@ -23,7 +23,7 @@ public class DayNightCycle : MonoBehaviour
     {
         get
         {
-            return _timeOfDay;
+            return _timeOfDay; //shows time of day in the inspector
         }
     }
     [SerializeField]
@@ -32,7 +32,7 @@ public class DayNightCycle : MonoBehaviour
     {
         get
         {
-            return _dayNumber;
+            return _dayNumber; //shows day number in the inspector
         }
     }
     [SerializeField]
@@ -41,7 +41,7 @@ public class DayNightCycle : MonoBehaviour
     {
         get
         {
-            return _yearNumber;
+            return _yearNumber; //shows year number in the inspector
         }
     }
     private float _timeScale = 100f;
@@ -68,7 +68,7 @@ public class DayNightCycle : MonoBehaviour
             UpdateTime();
         }
 
-        AdjustSunRotation();
+        AdjustSunRotation(); //adjusts sunrotation 
     }
 
     private void updateTimeScale()
@@ -96,7 +96,7 @@ public class DayNightCycle : MonoBehaviour
     {
         float sunAngle = timeOfDay * 360f;
         dailyRotation.transform.localRotation = Quaternion.Euler(new Vector3(sunAngle, 0f, 0f));
-        
+        //adjusts daily rotation 
     }
 }
 

@@ -129,13 +129,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
+  _GM: {fileID: 0}
+  harvestAmount: 0
   plantStages:
   - {fileID: 1459726706081263752}
   - {fileID: 90711436424347076}
   - {fileID: 4313545106681230073}
   - {fileID: 1150847816318442897}
   isWatered: 0
-  plant: {fileID: 5169604005314307628, guid: cd4d953d3f6d0c2488c1429fd7b979c9, type: 3}
+  plant: {fileID: 0}
   harvestable: 0
   amount: 0
 --- !u!1001 &878583099807397755

@@ -32,7 +32,7 @@ public class Tools : MonoBehaviour
                 SwitchTool(currentTool);
                 GameManager.currentTool = tools[currentTool].name;
                 ui.UpdateTool(tools[currentTool]);
-
+                //allows player to change tool and it to show up in the UI display
             }
         }
 
